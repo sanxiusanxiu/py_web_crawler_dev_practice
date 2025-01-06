@@ -52,7 +52,7 @@ def write_to_file(content):
 
 def main(offset):
     url = 'https://www.maoyan.com/board/4?offset=' + str(offset)
-    print('--->' + url)
+    # print('--->' + url)
     html = get_one_page(url)
     for item in parse_one_page(html):
         # print(item)
@@ -60,7 +60,7 @@ def main(offset):
 
 
 if __name__ == '__main__':
-    for i in range(4, 10):
+    for i in range(10):
         main(offset=i * 10)
         # 生成一个 12~99 之间的随机数
         random_number = random.randint(12, 99)
