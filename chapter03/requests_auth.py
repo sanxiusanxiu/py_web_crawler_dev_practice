@@ -9,9 +9,9 @@ def requests_auth_base():
 
 # 身份认证简写
 def requests_auth_abbreviation():
-    r = requests.get('https://ssr3.scrape.center/', auth=('username', 'password'))
+    r = requests.get('https://ssr3.scrape.center/', auth=('admin', 'admin'))
     print(r.status_code)
 
 
-# requests_oauth_base()
-requests_auth_base()
+# requests_auth_base()
+requests_auth_abbreviation()

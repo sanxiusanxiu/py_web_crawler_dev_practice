@@ -3,7 +3,7 @@ import urllib.parse
 import urllib.error
 
 
-def urlopen_data():
+def urlopen_post():
     data = bytes(urllib.parse.urlencode({'word': 'hello'}), encoding='utf8')
     # https://httpbin.org/post 是测试POST请求的链接
     response = urllib.request.urlopen('https://httpbin.org/post', data=data)
@@ -40,6 +40,6 @@ cadefault 参数已弃用
 context 参数必须是 ssl.SSLContext 类型，用来指定SSL设置
 '''
 
-# urlopen_data()
+# urlopen_post()
 # urlopen_timeout()
 # urlopen_timeout2()

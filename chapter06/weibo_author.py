@@ -12,7 +12,6 @@ headers = {
     'X-Requested-With': 'XMLHttpRequest',
 }
 
-
 # 构造参数字典，其中 type、value、containerid 是固定参数，page是可变参数
 def get_page(page):
     params = {
@@ -23,16 +22,15 @@ def get_page(page):
     }
     # 将参数转化成 类似于type=uid&value=2145291155&containerid=1076032145291155&page=2的形式
     url = base_url + urlencode(params)
-    # print(url)
     try:
         # 发送请求
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
+            print('请求成功 --> ', url)
             # 如果请求成功，直接调用 json 方法将内容解析为 JSON
             return response.json()
     except requests.ConnectionError as e:
         print('Error', e.args)
-
 
 # 定义一个解析方法，从结果中提取想要的信息，比如微博的id、正文、点赞数、评论数和转发数
 def parse_page(json):
@@ -49,22 +47,23 @@ def parse_page(json):
             weibo['reposts'] = item.get('reposts_count')
             yield weibo
 
-
-# # 还可以加一个方法将结果保存到 MongoDB 数据库
-# from pymongo import MongoClient
-#
-# client = MongoClient()
-# db = client['weibo']
-# collection = db['weibo']
-#
-# def save_to_mongo(result):
-#     if collection.insert(result):
-#         print('Saved to Mongo')
+# 将结果保存到 MongoDB 数据库
+def page_to_mongodb(results):
+    import pymongo
+    from pymongo import MongoClient
+    # 连接MongoDB
+    client = MongoClient('mongodb://localhost:27017/')
+    # 指定数据库
+    db = client['crawler']
+    # 指定集合（表）
+    collection = db['weibo_info']
+    insert_info = collection.insert_many(results)
+    print(insert_info)
 
 if __name__ == '__main__':
     for page in range(1, 2):
         json = get_page(page)
         results = parse_page(json)
-        for result in results:
-            print(result)
+        print('存储中...')
+        page_to_mongodb(results)
         time.sleep(13)

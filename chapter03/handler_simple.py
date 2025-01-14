@@ -1,9 +1,9 @@
 from urllib.request import HTTPPasswordMgrWithDefaultRealm, HTTPBasicAuthHandler, build_opener
 from urllib.error import URLError
 
-username = 'username'
-password = 'password'
-url = 'http://localhost:5000/'
+username = 'admin'
+password = 'admin'
+url = 'https://ssr3.scrape.center/'
 
 p = HTTPPasswordMgrWithDefaultRealm()
 # 添加用户名和密码

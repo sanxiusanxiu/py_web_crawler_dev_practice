@@ -35,6 +35,12 @@ def parse_one_page(html):
         print(f"猫眼评分：{score_integer}{score_fraction}")
         print('-' * 40)
         # 电影信息
+        '''
+        yield 的作用是使这个函数成为一个生成器（generator），而不是返回一个列表
+        每次循环迭代时，yield 会返回一个字典，其中包含当前迭代的电影的名称、类型、国家、时长、上映时间和评分
+        然后生成器会暂停执行，保存当前的执行状态
+        当外部代码再次请求生成器的下一个值时，生成器会从上次暂停的地方继续执行，直到再次遇到 yield
+        '''
         yield {
             'rank': rank,
             'image_src': image_src,
