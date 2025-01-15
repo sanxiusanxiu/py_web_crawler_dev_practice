@@ -4,6 +4,7 @@ import random
 import requests
 from lxml import etree
 
+
 # https://ssr1.scrape.center/page/2
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
@@ -17,6 +18,8 @@ def get_one_page(url):
     return None
 
 def parse_one_page(text):
+    # 直接读取文件进行解析
+    # html = etree.parse('./ssr1_temp.html', etree.HTMLParser())
     # 解析请求返回的内容
     html = etree.HTML(text)
     # 每个页面有10部电影
