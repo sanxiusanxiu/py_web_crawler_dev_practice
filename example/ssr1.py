@@ -47,7 +47,7 @@ def parse_one_page(text):
     return movies
 
 def write_to_json(content):
-    with open('./ssr1_data.txt', 'a', encoding='utf-8') as file:
+    with open('ssr1_data.txt', 'a', encoding='utf-8') as file:
         file.write(json.dumps(content, ensure_ascii=False) + '\n')
 
 def main(index):

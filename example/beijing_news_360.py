@@ -49,7 +49,7 @@ def parse_one_page(text):
     return news_all
 
 def write_to_json(content):
-    with open('./beijing_news_360.txt', 'a', encoding='utf-8') as file:
+    with open('beijing_news_360.txt', 'a', encoding='utf-8') as file:
         file.write(json.dumps(content, ensure_ascii=False) + '\n')
 
 def main(index):

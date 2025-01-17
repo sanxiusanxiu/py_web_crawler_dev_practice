@@ -4,7 +4,7 @@ import time
 #
 
 # 生成一个a~b之间的随机数
-def make_random():
-    random_number = random.randint(2, 12)
+def make_random(a, b):
+    random_number = random.randint(a, b)
     return random_number
 
