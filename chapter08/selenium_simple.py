@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver  # 导入selenium的webdriver模块
 from selenium.webdriver.chrome.options import Options  # 导入用于配置Chrome浏览器选项的模块
 from selenium.webdriver.chrome.service import Service  # 导入用于配置ChromeDriver服务的模块
@@ -39,6 +41,7 @@ try:
     print(driver.get_cookies())
     # 打印当前页面的源代码
     print(driver.page_source)
+    time.sleep(9)
 finally:
     # 关闭浏览器
     driver.quit()
