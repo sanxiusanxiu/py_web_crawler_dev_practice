@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 
 # 指定GeckoDriver的路径
-gecko_path = './geckodriver.exe'
+gecko_path = 'geckodriver.exe'
 
 # 创建Service对象
 service = Service(gecko_path)

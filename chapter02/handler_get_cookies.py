@@ -12,7 +12,7 @@ def get_cookies():
 
 
 def get_cookies_file():
-    file_path = './cookies.txt'
+    file_path = 'cookies.txt'
     # MozillaCookieJar 用于读取和保存Cookies，会保存为 Mozilla 类型浏览器的 Cookies 格式
     cookie = http.cookiejar.MozillaCookieJar(file_path)
     # 另外 LWPCookieJar 也可以读取和保存Cookies，会保存为 libwww-perl(LWP) 格式

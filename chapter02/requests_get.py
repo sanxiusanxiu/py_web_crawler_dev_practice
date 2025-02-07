@@ -76,7 +76,7 @@ def requests_get_picture():
     r = requests.get('https://github.com/favicon.ico', headers=headers)
     print(r.text)
     # 保存图片
-    with open('./favicon.ico', 'wb') as f:
+    with open('favicon.ico', 'wb') as f:
         f.write(r.content)
 
 # requests_get_base()

@@ -10,8 +10,9 @@ print('响应的类型：', type(response))
 
 # 读取返回的网页内容
 # print(response.read().decode('utf-8'))
-# 20241105  原因：python.org的网站很可能使用了gzip压缩来传输内容
+# 20241105  原因：python.org的网站使用了gzip压缩来传输内容
 # UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+
 content = response.read()
 # 检查内容是否为gzip压缩
 if response.info().get('Content-Encoding') == 'gzip':
@@ -19,6 +20,7 @@ if response.info().get('Content-Encoding') == 'gzip':
     buf = BytesIO(content)
     f = gzip.GzipFile(fileobj=buf)
     content = f.read()
+
 # 将内容解码为字符串输出
 content = content.decode('utf-8')
 # print(content)

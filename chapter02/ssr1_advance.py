@@ -76,7 +76,7 @@ def parse_detail(html):
     }
 
 # 指定数据保存路径，如果不存在则创建
-results_dir = './results'
+results_dir = 'results'
 exists(results_dir) or makedirs(results_dir)
 
 def save_data(data):

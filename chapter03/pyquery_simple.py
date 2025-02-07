@@ -26,7 +26,7 @@ print(doc3('title'))
 
 
 def init_from_file():
-    doc4 = pq(filename='./pyquery_test.html')
+    doc4 = pq(filename='pyquery_test.html')
     print(doc4('li'))
 
 

@@ -1,6 +1,6 @@
 from selenium import webdriver
 
-path = './phantomjs.exe'
+path = 'phantomjs.exe'
 
 # 因版本更新，已经无法使用 PhantomJS
 browser = webdriver.PhantomJS(path)

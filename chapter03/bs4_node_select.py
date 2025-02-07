@@ -143,8 +143,8 @@ def bs4_corr3_selector():
     print(list(soup.a.parents)[0].attrs['class'])
 
 
-# bs4_attr_selector()
-# bs4_nest_selector()
-# bs4_corr_selector()
-# bs4_corr2_selector()
-# bs4_corr3_selector()
+bs4_attr_selector()
+bs4_nest_selector()
+bs4_corr_selector()
+bs4_corr2_selector()
+bs4_corr3_selector()

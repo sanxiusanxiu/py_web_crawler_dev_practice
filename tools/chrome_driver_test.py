@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
 # 指定下载的chromedriver的路径
-chromedriver_path = './chromedriver.exe'
+chromedriver_path = 'chromedriver.exe'
 
 # 设置Chrome选项
 chrome_options = Options()

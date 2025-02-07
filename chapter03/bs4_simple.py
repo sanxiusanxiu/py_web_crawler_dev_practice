@@ -6,6 +6,9 @@ def bs4_demo_pre():
     soup = BeautifulSoup('<p>Hello</p>', 'lxml')
     print(soup.p.string)
 
+bs4_demo_pre()
+
+print('-- - --')
 
 html = """
 <html><head><title>The Dormouse's story</title></head>

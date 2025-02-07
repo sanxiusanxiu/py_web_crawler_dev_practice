@@ -2,8 +2,6 @@ import requests
 
 from urllib.parse import urljoin
 
-from chapter03.urlencode_simple import params
-
 base_url = 'https://login3.scrape.center/'
 login_url = urljoin(base_url, '/api/login')
 index_url = urljoin(base_url, '/api/book')
