@@ -14,6 +14,6 @@ if response.status_code == 200:
     for item in result:
         # 简单过滤一下标题内容，这里认为真正的标题文字较长
         if len(item) > 6:
-            with open('./txt_store.txt', 'a', encoding='utf-8') as file:
+            with open('txt_simple.txt', 'a', encoding='utf-8') as file:
                 file.write(item)
                 file.write('\n')

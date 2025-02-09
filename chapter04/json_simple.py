@@ -34,7 +34,7 @@ def json_demo():
 
 # 读取JSON文件
 def json_read_file():
-    with open('./json_data.json', 'r') as file:
+    with open('json_simple.json', 'r') as file:
         line = file.read()
         data = json.loads(line)
         print(data)
@@ -56,7 +56,7 @@ def json_output_file():
 
     # 中文字符写入时会变成 Unicode 字符
     # 为了输出中文，需要指定参数 ensure_ascii=False，另外还要规定文件输出的编码
-    with open('./json_dumps.json', 'w', encoding='utf-8') as file:
+    with open('json_dumps.json', 'w', encoding='utf-8') as file:
         file.write(json.dumps(data, indent=4, ensure_ascii=False))
 
 
