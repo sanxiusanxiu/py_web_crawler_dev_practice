@@ -4,6 +4,7 @@ queue_name = 'scrape'
 max_priority = 100
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
+channel.queue_delete(queue=queue_name)
 channel.queue_declare(queue=queue_name, arguments={'x-max-priority': max_priority})
 
 while True:
