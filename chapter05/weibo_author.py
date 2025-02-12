@@ -12,7 +12,7 @@ headers = {
     'X-Requested-With': 'XMLHttpRequest',
 }
 
-# 构造参数字典，其中 type、value、containerid 是固定参数，page是可变参数
+# 构造参数字典，其中type、value、containerid是固定参数，page是可变参数
 def get_page(page):
     params = {
         'type': 'uid',
@@ -27,7 +27,7 @@ def get_page(page):
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
             print('请求成功 --> ', url)
-            # 如果请求成功，直接调用 json 方法将内容解析为 JSON
+            # 如果请求成功，直接调用json方法将内容解析为JSON
             return response.json()
     except requests.ConnectionError as e:
         print('Error', e.args)
@@ -61,7 +61,7 @@ def page_to_mongodb(results):
     print(insert_info)
 
 if __name__ == '__main__':
-    for page in range(1, 2):
+    for page in range(1, 11):
         json = get_page(page)
         results = parse_page(json)
         print('存储中...')
