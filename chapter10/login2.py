@@ -63,7 +63,7 @@ def login2_selenium():
     index_url = urljoin(base_url, '/page/1')
     username = 'admin'
     password = 'admin'
-    chrome_driver_path = '../chapter08/chromedriver.exe'
+    chrome_driver_path = '../chapter07/chromedriver.exe'
     chrome_options = Options()
     # 忽略浏览器证书验证
     chrome_options.add_argument('--ignore-certificate-errors')
