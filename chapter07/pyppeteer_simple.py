@@ -1,17 +1,10 @@
 import asyncio
-import os
-
 from pyppeteer import launch
 from pyquery import PyQuery as pq
 
-# 指定Chromium浏览器的路径
-executable_path = './mini_installer.exe'
-# 设置环境变量以阻止自动下载Chromium
-os.environ['PYPPETEER_CHROMIUM_REVISION'] = 'None'
-
 async def main():
     # 启动浏览器
-    browser = await launch(executable_path=executable_path)
+    browser = await launch()
     # 启动一个新的选项卡
     page = await browser.newPage()
     # 加载测试网站
