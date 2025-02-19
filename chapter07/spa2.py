@@ -104,9 +104,8 @@ def main():
                 scrape_detail(detail_url)
                 detail_data = parse_detail()
                 logging.info(f'detail data {detail_data}')
-                data = parse_detail()
                 logging.info('saving data to json file')
-                save_data(data)
+                save_data(detail_data)
                 logging.info('data saved successfully')
     finally:
         driver.close()
