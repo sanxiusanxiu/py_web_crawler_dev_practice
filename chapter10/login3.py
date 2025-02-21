@@ -1,5 +1,4 @@
 import requests
-
 from urllib.parse import urljoin
 
 base_url = 'https://login3.scrape.center/'
@@ -27,5 +26,5 @@ response_index = requests.get(index_url, params={
 }, headers=header)
 
 print('状态码：', response_index.status_code)
-print('URL: ', response_index.url)
-print('Data: ', response_index.json())
+print('链接：', response_index.url)
+print('数据：', response_index.json())
