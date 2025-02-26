@@ -31,7 +31,7 @@ def main(args=None):
         )
 
     # driver = uc.Chrome()
-    driver = uc.Chrome(driver_executable_path='chromedriver.exe', patcher_force_close=False)
+    driver = uc.Chrome(driver_executable_path='../chapter07/chromedriver.exe', patcher_force_close=False)
 
     driver.get("https://www.google.com")
 
