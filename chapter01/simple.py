@@ -1,72 +1,23 @@
 
-# https://github.com/Python3WebSpider/Python3WebSpider/blob/master/
 # https://scrape.center/
-
-
-# URI = URL + URN
-
-# URI的全称为Uniform Resource Identifier，统一资源标志符
-# URL的全称为Universal Resource Locator，统一资源定位符
-# URN的全称为Universal Resource Name，统一资源名称
-
+# https://github.com/Python3WebSpider/Python3WebSpider/blob/master/
 
 """
 scheme://[username:password@]hostname[:port][/path][;parameters][?query][#fragment]
 
-scheme：协议，访问资源所使用的协议类型，如HTTP、HTTPS、FTP，scheme也常称作protocol
+scheme：协议，访问资源所使用的协议类型，如 HTTP、HTTPS、FTP，scheme 也常称作 protocol
 username：用户名
 password：密码
-hostname：主机地址，资源所在服务器的域名或IP地址
-port：端口，指定服务器正在监听的网络端口，HTTP协议默认80，HTTPS协议默认443
+hostname：主机地址，资源所在服务器的域名或 IP 地址
+port：端口，指定服务器正在监听的网络端口， HTTP 协议默认 80，HTTPS 协议默认 443
 path：路径，资源在服务器上的具体位置
 parameters：参数，访问某个资源时的附加信息
-query：查询，用来查询某类资源，常以问号?开头，使用&分隔多个查询
+query：查询，用来查询某类资源，常以问号 ? 开头，使用 & 分隔多个查询
 fragment：片段，对资源描述的部分补充，也可以理解为锚点，指定网页中的一个位置
-
 """
-
-
-"""
-HTTPS的安全基础是SSL，因此通过HTTPS传输的内容都是经过SSL加密的
-SSL的主要作用可以分为两种：
-建立一个信息安全通道，保证数据传输的安全性；
-确认网站的真实性，凡是使用了HTTPS协议的网站，都可以点击浏览器地址栏的锁头标志查看网站认证之后的真实信息，也可以通过CA机构颁发的安全签章来查询
-
-现在越来越多的网站和APP都朝着HTTPS的方向发展：
-例如苹果公司强制所有iOS App在2017年1月1日前全部改为使用HTTPS加密，否则APP无法在应用商店上架；
-谷歌从2017年1月推出的Chrome 56开始，对未进行HTTPS加密的网址链接亮出风险提示，即在地址栏的显著位置提醒用户“此网页不安全”；
-腾讯微信小程序的官方需求文档要求后台使用HTTPS请求进行网络通信，不满足条件的域名和协议无法正常请求
-
-"""
-
-
-"""
-在General部分里，
-Request URL代表请求的URL，
-Request Method表示请求的方法，
-Status Code表示响应状态码，
-Remote Address表示远程服务器的地址和端口，
-Referrer Policy代表Referrer判别策略，
-
-继续往下可以看到Response Headers响应头和Request Headers请求头信息
-
-"""
-
-
-"""
-在浏览器中直接输入URL并回车，便发起了一个GET请求，请求的参数会直接包含到URL里，
-例如在百度中搜索Python，这就是一个GET请求，链接为 https://www.baidu.com/s?wd=python ，
-其中URL中包含了请求的参数信息，参数wd表示要搜寻的关键字
-
-POST请求大多在表单提交时发起，
-比如对于一个登录表单，输入用户名和密码后，点击 “登录” 按钮，这时通常会发起一个POST请求，其数据通常以表单的形式传输，而不会体现在URL中
-
-GET请求提交的数据最多只有1024字节，而POST方式没有限制
-"""
-
 
 # GET       请求页面，并返回页面内容
-# HEAD      类似于GET请求，只不过返回的响应中没有具体的内容，用于获取报头
+# HEAD      类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头
 # POST      大多用于提交表单或上传文件，数据包含在请求体中
 # PUT       从客户端向服务器传送的数据取代指定文档中的内容
 # DELETE    请求服务器删除指定的页面
@@ -74,18 +25,18 @@ GET请求提交的数据最多只有1024字节，而POST方式没有限制
 # OPTIONS   允许客户端查看服务器的性能
 # TRACE     回显服务器收到的请求，主要用于测试或诊断
 
-
 """
 # Accept：请求报头域，用于指定客户端可接受哪些类型的信息
 # Accept-Language：指定客户端可接受的语言类型
 # Accept-Encoding：指定客户端可接受的内容编码
-# Host：用于指定请求资源的主机IP和端口号，其内容为请求URL的原始服务器或网关的位置
-# Cookie：也常用复数形式Cookies，这是网站为了辨别用户，进行会话跟踪而存储在用户本地的数据，它的主要功能是维持当前访问会话。例如，我们输入用户名和密码成功登录某个网站后，服务器会用会话保存登录状态信息，之后每次刷新或请求该站点的其他页面时，会发现都是登录状态，这就是 Cookie的功劳。Cookies里有信息标识了我们所对应的服务器的会话，每次浏览器在请求该站点的页面时，都会在请求头中加上Cookies并将其发送给服务器，服务器通过Cookies识别出是我们自己，并且查出当前状态是登录状态，所以返回结果就是登录之后才能看到的网页内容
-# Referer：用来标识这个请求是从哪个页面发过来的，服务器可以拿到这一信息并做相应的处理，如来源统计、防盗链处理等
-# User-Agent：简称UA，可以使服务器识别客户端使用的操作系统及版本、浏览器及版本等信息。在做爬虫时加上此信息，可以伪装成浏览器，如果不加很可能会被识别出来
-# Content-Type：也叫互联网媒体类型（Internet Media Type）或者MIME类型，在HTTP协议消息头中，它用来表示具体请求中的媒体类型信息。例如，text/html代表HTML格式，image/gif 代表GIF图片，application/json代表JSON类型，application/x-www-form-urlencoded代表表单，multipart/form-data代表文件上传。在爬虫中，如果要构造POST请求，需要使用正确的  Content-Type，否则会导致POST提交后无法正常响应
-"""
+# Host：用于指定请求资源的主机 IP 和端口号，其内容为请求 URL 的原始服务器或网关的位置
 
+# Cookie：也常用复数形式 Cookies，这是网站为了辨别用户，进行会话跟踪而存储在用户本地的数据，它的主要功能是维持当前访问会话。例如，我们输入用户名和密码成功登录某个网站后，服务器会用会话保存登录状态信息，之后每次刷新或请求该站点的其他页面时，会发现都是登录状态，这就是 Cookie 的功劳。Cookies 里有信息标识了我们所对应的服务器的会话，每次浏览器在请求该站点的页面时，都会在请求头中加上 Cookies 并将其发送给服务器，服务器通过 Cookies 识别出是我们自己，并且查出当前状态是登录状态，所以返回结果就是登录之后才能看到的网页内容
+# Referer：用来标识这个请求是从哪个页面发过来的，服务器可以拿到这一信息并做相应的处理，如来源统计、防盗链处理等
+# User-Agent：简称 UA，可以使服务器识别客户端使用的操作系统及版本、浏览器及版本等信息。在做爬虫时加上此信息，可以伪装成浏览器，如果不加很可能会被识别出来
+
+# Content-Type：也叫互联网媒体类型（Internet Media Type）或者 MIME 类型，在 HTTP 协议消息头中，它用来表示具体请求中的媒体类型信息。例如，text/html 代表 HTML 格式，image/gif 代表 GIF 图片，application/json 代表 JSON 类型，application/x-www-form-urlencoded 代表表单，multipart/form-data 代表文件上传。在编写爬虫时，如果要构造 POST 请求，需要使用正确的 Content-Type，否则会导致 POST 提交后无法正常响应
+"""
 
 # 100  服务器已收到请求的一部分，正在等待其余部分
 # 101  请求者已要求服务器切换协议，服务器已确认并准备切换
@@ -99,7 +50,7 @@ GET请求提交的数据最多只有1024字节，而POST方式没有限制
 # 300  针对请求，服务器可执行多种操作
 # 301  请求的网页已永久移动到新位置，即永久重定向
 # 302  请求的网页暂时跳转到其他页面，即暂时重定向
-# 303  如果原来的请求是POST，重定向目标文档应该通过GET提取
+# 303  如果原来的请求是 POST，重定向目标文档应该通过 GET 提取
 # 304  此次请求返回的网页未修改，继续使用上次的资源
 # 305  请求者应该使用代理访问该网页
 # 307  请求的资源临时从其他位置响应
@@ -125,16 +76,16 @@ GET请求提交的数据最多只有1024字节，而POST方式没有限制
 # 502  服务器作为网关或代理，从上游服务器收到无效响应
 # 503  服务器目前无法使用
 # 504  服务器作为网关或代理，但是没有及时从上游服务器收到请求
-# 505  服务器不支持请求中所用的HTTP协议版本
-
+# 505  服务器不支持请求中所用的 HTTP 协议版本
 
 """
 # Date：标识响应产生的时间
 # Last-Modified：指定资源的最后修改时间
 # Content-Encoding：指定响应内容的编码
+
 # Server：包含服务器的信息，比如名称、版本号等
-# Content-Type：文档类型，指定返回的数据类型是什么，如text/html代表返回HTML文档，application/x-javascript则代表返回JavaScript文件，image/jpeg则代表返回图片
-# Set-Cookie：设置Cookies，响应头中的Set-Cookie告诉浏览器需要将此内容放在Cookies中，下次请求携带Cookies请求
+# Content-Type：文档类型，指定返回的数据类型是什么，如 text/html 代表返回 HTML 文档，application/x-javascript 则代表返回 JavaScript 文件，image/jpeg 则代表返回图片
+# Set-Cookie：设置 Cookies，响应头中的 Set-Cookie 告诉浏览器需要将此内容放在 Cookies 中，下次请求携带 Cookies 请求
+
 # Expires：指定响应的过期时间，可以使代理服务器或浏览器将加载的内容更新到缓存中。如果再次访问时，就可以直接从缓存中加载，降低服务器负载，缩短加载时间
 """
-
