@@ -1,6 +1,5 @@
 import csv
 
-
 # 写入
 def csv_write_demo():
     with open('csv_simple.csv', 'w') as csv_file:
@@ -25,7 +24,7 @@ def csv_write_demo():
         # 一般情况下，爬虫爬取的都是结构化数据，会用字典来表示
         # csv 库提供了字典的写入方式
         fieldnames = ['id', 'name', 'age']
-        # 先定义3个字段，将其传给 DictWriter 初始化字典写入对象
+        # 先定义 3 个字段，将其传给 DictWriter 初始化字典写入对象
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         # 调用 writeheader 方法先写入头信息，然后再调用 writerow 方法传入相应字典
         writer.writeheader()
@@ -39,7 +38,6 @@ def csv_write_demo():
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writerow({'id': '10004', 'name': 'Durant', 'age': 20})
 
-
 # 写入中文
 def csv_write_zh():
     # 如果要写入中文内容的话，可能会遇到字符编码的问题
@@ -47,7 +45,6 @@ def csv_write_zh():
         fieldnames = ['id', 'name', 'age']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writerow({'id': '10005', 'name': '李明', 'age': 23})
-
 
 # 读取文件
 def csv_read_file():
@@ -60,7 +57,6 @@ def csv_read_file():
     df = pd.read_csv('csv_simple.csv')
     print(df)
 
-
 # csv_write_demo()
 # csv_write_zh()
-csv_read_file()
+# csv_read_file()

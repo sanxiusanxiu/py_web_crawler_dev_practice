@@ -8,9 +8,9 @@ with sync_playwright() as playwright:
 
     # 指定响应文件
     def modify_response(route, request):
-        route.fulfill(path='./custom_response.html')
+        route.fulfill(path='playwright_custom_response.html')
 
-    page.route('/', modify_response)
+    page.route('**/*', modify_response)
     page.goto('https://spa6.scrape.center/')
-    time.sleep(6)
+    page.pause()
     browser.close()

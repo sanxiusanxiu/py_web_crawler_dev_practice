@@ -22,9 +22,9 @@ print([result['name'] for result in results_offset])
 results_limit = collection.find().sort('name', pymongo.ASCENDING).skip(2).limit(2)
 print([result['name'] for result in results_limit])
 
-'''
+"""
 注意在数据库数量非常庞大的时候，如千万、亿级别，最好不要使用大的偏移量来查询数据，很可能导致内存溢出。
-此时可以使用类似如下操作来查询，需要记录好上次查询的_id：
+此时可以使用类似如下操作来查询，需要记录好上次查询的 _id：
 from bson.objectid import ObjectId
 collection.find({'_id': {'$gt': ObjectId('593278c815c2602678bb2b8d')}})
-'''
+"""

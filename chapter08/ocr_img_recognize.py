@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 import pytesseract
 
-image = Image.open('picture03.png')
+image = Image.open('ocr_base.png')
 
 # 将图片二值化处理
 # image = image.convert('1')
@@ -14,7 +14,7 @@ image = image.convert('L')
 threshold = 50
 # 将图片转化成数组
 array = np.array(image)
-# 对数组进行筛选和处理，大于阈值的设置为255，小于阈值的设置为0
+# 对数组进行筛选和处理，大于阈值的设置为 255，小于阈值的设置为 0
 array = np.where(array > threshold, 255, 0)
 image = Image.fromarray(array.astype('uint8'))
 # image.show()

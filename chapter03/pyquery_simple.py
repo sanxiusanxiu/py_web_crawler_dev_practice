@@ -24,10 +24,9 @@ print(doc2('title'))
 doc3 = pq(requests.get('https://cuiqingcai.com').text)
 print(doc3('title'))
 
-
+# 文件初始化
 def init_from_file():
     doc4 = pq(filename='pyquery_test.html')
     print(doc4('li'))
-
 
 init_from_file()

@@ -4,8 +4,8 @@ import requests
 def requests_get_base():
     r = requests.get('https://httpbin.org/get')
     print(r.text)
-    '''
-    运行结果如下，其中包含请求头、URL、IP等信息
+    """
+    运行结果如下，其中包含请求头、URL、IP 等信息
     {
       "args": {}, 
       "headers": {
@@ -18,26 +18,26 @@ def requests_get_base():
       "origin": "223.88.17.244", 
       "url": "https://httpbin.org/get"
     }
-    '''
+    """
 
 
 def requests_get_params():
-    # 对于GET请求，利用 params 参数附带额外的信息
+    # 对于 GET 请求，利用 params 参数附带额外的信息
     data = {
-        'name': 'germey',
+        'name': 'David',
         'age': 22
     }
     r = requests.get('https://httpbin.org/get', params=data)
     # 另外，网页的返回类型实际上是 str 类型、 JSON 格式
     # print(r.text)
-    # 如果想直接解析需要调用 json() （将JSON转化为字典）
+    # 如果想直接解析需要调用 json() ，将 JSON 转化为字典
     print(r.json())
-    '''
+    """
     运行结果如下，请求链接自动被构建成了 https://httpbin.org/get?name=germey&age=22 
     {
       "args": {
         "age": "22", 
-        "name": "germey"
+        "name": "David"
       }, 
       "headers": {
         "Accept": "*/*", 
@@ -49,7 +49,7 @@ def requests_get_params():
       "origin": "223.88.17.244", 
       "url": "https://httpbin.org/get?name=germey&age=22"
     }
-    '''
+    """
 
 
 def requests_get_headers():
@@ -61,7 +61,7 @@ def requests_get_headers():
     }
     # 请求普通网页，获得相应内容
     r = requests.get('https://www.zhihu.com/explore', headers=headers)
-    # 20241123修改正则
+    # 20241123 修改正则
     # pattern = re.compile('explore-feed.*?question_link.*?>(.*?)</a>', re.S)
     pattern = re.compile('ExploreSpecialCard-contentItem.*?>(.*?)</a>', re.S)
     titles = re.findall(pattern, r.text)
@@ -82,4 +82,4 @@ def requests_get_picture():
 # requests_get_base()
 # requests_get_params()
 # requests_get_headers()
-requests_get_picture()
+# requests_get_picture()

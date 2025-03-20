@@ -13,7 +13,7 @@ async def main():
     await asyncio.sleep(2)
     # 保存截图
     await page.screenshot({'path': 'pyppeteer_base.png'})
-    # 执行JS，返回页面的宽、高、像素大小比率
+    # 执行 JavaScript，返回页面的宽、高、像素大小比率
     dimensions = await page.evaluate('''
     () => {
         return {

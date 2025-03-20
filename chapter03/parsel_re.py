@@ -13,12 +13,14 @@ html = """
 """
 
 selector = Selector(text=html)
-# 匹配包含link的所有结果
+# 匹配包含 link 的所有结果
 result = selector.css('.item-0').re('link.*')
 print(result)
+
 # 进一步提取
 result2 = selector.css('.item-0 *::text').re('.*item')
 print(result2)
+
 # 提取第一个符合规则的结果
 result_first = selector.css('.item-0').re_first('<span class="bold">(.*?)</span>')
 print(result_first)

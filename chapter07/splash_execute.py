@@ -2,14 +2,14 @@ import requests
 from urllib.parse import quote
 
 def execute_base():
-    # Lua脚本
+    # Lua 脚本
     lua = '''
     function main(splash)
         return 'hello'
     end
     '''
 
-    # 使用urllib.parse.quote转码URL，把构造的URL作为lua_source参数
+    # 使用 urllib.parse.quote 转码 URL，把构造的 URL 作为 lua_source 参数
     url = 'http://localhost:8050/execute?lua_source=' + quote(lua)
     response = requests.get(url)
     print(response.text)
@@ -32,4 +32,4 @@ def execute_case():
     print(response.text)
 
 # execute_base()
-execute_case()
+# execute_case()

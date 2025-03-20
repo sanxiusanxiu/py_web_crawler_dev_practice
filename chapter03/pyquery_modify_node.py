@@ -1,6 +1,5 @@
 from pyquery import PyQuery as pq
 
-
 # addClass 和 removeClass
 def pyquery_add_remove_class():
     html = '''
@@ -27,7 +26,6 @@ def pyquery_add_remove_class():
     li.addClass('active')
     print(li)
 
-
 # attr、text、html
 def pyquery_attr_text_html():
     html = '''
@@ -48,7 +46,6 @@ def pyquery_attr_text_html():
     li.html('<span>changed item</span>')
     print(li)
 
-
 # remove
 def pyquery_remove():
     html = '''
@@ -64,7 +61,6 @@ def pyquery_remove():
     # 首先选中 p 节点，然后调用 remove() 将其移除，这时 wrap 内部就只剩下 Hello, World ，然后再利用 text() 方法提取
     wrap.find('p').remove()
     print(wrap.text())
-
 
 # pyquery_add_remove_class()
 # pyquery_attr_text_html()

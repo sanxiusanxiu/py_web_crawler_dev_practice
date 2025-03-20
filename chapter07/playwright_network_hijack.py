@@ -14,5 +14,5 @@ with sync_playwright() as playwright:
     page.route(re.compile(r'(\.png)|(\.jpg)'), cancel_request)
     page.goto('https://spa6.scrape.center/')
     page.wait_for_load_state('networkidle')
-    page.screenshot(path='no_picture.png')
+    page.screenshot(path='playwright_hijack_no_picture.png')
     browser.close()

@@ -148,4 +148,4 @@ def pymysql_select_demo2():
 # pymysql_update_demo2()
 # pymysql_select_demo()
 # pymysql_delete_demo()
-pymysql_select_demo2()
+# pymysql_select_demo2()

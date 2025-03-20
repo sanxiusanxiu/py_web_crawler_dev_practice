@@ -11,12 +11,13 @@ html = """
     </ul>
 </div>
 """
-# 创建一个Selector对象
+# 创建一个 Selector 对象
 selector = Selector(text=html)
-# 分别使用CSS和XPath提取class包含 .item-0 的节点
+
+# 分别使用 CSS 和 XPath 提取 class 包含 .item-0 的节点
 items_css = selector.css('.item-0')
 print(len(items_css), type(items_css), items_css)
 print('----- -----')
+
 item_xpath = selector.xpath('//li[contains(@class, "item-0")]')
 print(len(item_xpath), type(item_xpath), item_xpath)
-

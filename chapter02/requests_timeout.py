@@ -4,7 +4,7 @@ import requests
 r = requests.get('https://www.taobao.com', timeout=1)
 print(r.status_code)
 
-# 分别指定
+# 分别指定两个阶段的时间
 # r = requests.get('https://www.taobao.com', timeout=(5, 11))
 
 # 设置永久等待

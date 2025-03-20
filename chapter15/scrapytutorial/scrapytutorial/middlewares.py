@@ -29,7 +29,7 @@ class ScrapytutorialSpiderMiddleware:
         return None
 
     def process_spider_output(self, response, result, spider):
-        # Called with the results returned from the Spider, after
+        # Called with the case_results returned from the Spider, after
         # it has processed the response.
 
         # Must return an iterable of Request, or item objects.

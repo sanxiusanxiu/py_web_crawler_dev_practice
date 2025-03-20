@@ -1,6 +1,7 @@
 import re
 
-html = '''<div id="songs-list">
+html = '''
+<div id="songs-list">
 <h2 class="title">经典老歌</h2>
 <p class="introduction">
 经典老歌列表
@@ -19,13 +20,14 @@ html = '''<div id="songs-list">
 <a href="/6.mp3" singer="邓丽君">但愿人长久</a>
 </li>
 </ul>
-</div>'''
+</div>
+'''
 
 # 提取所有的歌手名和歌名
 results = re.findall('<li.*?href="(.*?)".*?singer="(.*?)">(.*?)</a>', html, re.S)
 print(results)
 # 返回的列表都是元组类型
-print(type(results))
+# print(type(case_results))
 for result in results:
     print(result)
     print(result[0], result[1], result[2])

@@ -1,6 +1,7 @@
 import re
 
-html = '''<div id="songs-list">
+html = '''
+<div id="songs-list">
 <h2 class="title">经典老歌</h2>
 <p class="introduction">
 经典老歌列表
@@ -19,24 +20,24 @@ html = '''<div id="songs-list">
 <a href="/6.mp3" singer="邓丽君">但愿人长久</a>
 </li>
 </ul>
-</div>'''
-
-
-def re_sub_base():
-    content = '54aK54yea54TUbs2g'
-    content = re.sub(r'\d+', '', content)
-    print(content)
+</div>
+'''
 
 
 def re_findall_old():
+    # 正则比较麻烦
     results = re.findall(r'<li.*?>\s*?(<a.*?>)?(\w+)(</a>)?\s*?</li>', html, re.S)
     for result in results:
         print(result[1])
 
+print('使用 findall 方法：')
+re_findall_old()
+print('--------- ---------- ----------')
 
 # 清理掉a标签
 html = re.sub('<a.*?>|</a>', '', html)
 print(html)
+# 然后再使用 findall 去匹配比较简便一些
 results = re.findall('<li.*?>(.*?)</li>', html, re.S)
 for result in results:
     print(result.strip())

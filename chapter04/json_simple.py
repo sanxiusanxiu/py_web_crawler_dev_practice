@@ -1,6 +1,5 @@
 import json
 
-
 def json_demo():
     str = '''
     [{
@@ -31,8 +30,7 @@ def json_demo():
     # 另外，get 方法还可以传入第二个参数（即默认值）
     print(data[0].get('age', 25))  # 25
 
-
-# 读取JSON文件
+# 读取 JSON 文件
 def json_read_file():
     with open('json_simple.json', 'r') as file:
         line = file.read()
@@ -40,7 +38,7 @@ def json_read_file():
         print(data)
 
 
-# 输出JSON文件
+# 输出 JSON 文件
 def json_output_file():
     data = [{
         'name': ' 王伟 ',
@@ -59,7 +57,6 @@ def json_output_file():
     with open('json_dumps.json', 'w', encoding='utf-8') as file:
         file.write(json.dumps(data, indent=4, ensure_ascii=False))
 
-
 # json_demo()
 # json_read_file()
-json_output_file()
+# json_output_file()

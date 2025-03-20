@@ -7,10 +7,10 @@ async def main():
     page = await browser.newPage()
     await page.goto('https://spa2.scrape.center/')
     await page.waitForSelector('.item .name')
-    # J方法等价于querySelector方法
+    # J 方法等价于 querySelector 方法
     j_result = await page.J('.item .name')
     pq_result = await page.querySelector('.item .name')
-    # JJ方法等价于querySelectorAll方法
+    # JJ 方法等价于 querySelectorAll 方法
     jj_result = await page.JJ('.item .name')
     pq_all_result = await page.querySelectorAll('.item .name')
     print('j_result:', j_result)

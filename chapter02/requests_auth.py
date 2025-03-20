@@ -2,6 +2,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 
+# 身份认证
 def requests_auth_base():
     r = requests.get('https://ssr3.scrape.center/', auth=HTTPBasicAuth('admin', 'admin'))
     print(r.status_code)
@@ -14,4 +15,4 @@ def requests_auth_abbreviation():
 
 
 # requests_auth_base()
-requests_auth_abbreviation()
+# requests_auth_abbreviation()
