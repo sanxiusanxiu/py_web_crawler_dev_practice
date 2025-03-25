@@ -2,6 +2,8 @@
 
 本项目是本人在学习《Python 3 网络爬虫开发实战》（作者：崔庆才）一书时的代码复现，欢迎大家共同讨论、学习
 
+真的是佩服崔老师，能把书写的这么厚。。。
+
 练习网站：https://scrape.center/
 
 作者博客：https://cuiqingcai.com/
@@ -10,11 +12,11 @@
 
 文件查阅顺序一般是 xxx_simple --> xxx_base --> xxx_keyword --> xxx_other
 
-pip freeze > requirements.txt
-
-真的是佩服崔老师，能把书写的这么厚。。。
+其中 chapter01 到 chapter07、chapter10 这几个章节的内容做的比较全一些，后续的代理、逆向、框架、分布式等内容由于时间、资金等原因请查阅作者的项目
 
 后面会把这个合集项目拆分成几个小一点的分项目，以便阶段性学习和复习，后续如果还有更新应该是更新分项目
+
+pip freeze > requirements.txt
 
 ## 《Python 3 网络爬虫开发实战（第二版）》 作者：崔庆才
 
