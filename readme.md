@@ -32,6 +32,8 @@
 
 #### chapter03 网页数据的解析提取
 
+在提取页面信息时使用正则表达式是很不方便的，这时候就要用到解析库
+
 #### chapter04 数据的存储
 
 #### chapter05 Ajax 数据爬取
@@ -78,34 +80,4 @@
 
 由于时间、资金、技术等原因，爬虫的管理和部署部分请查阅作者的项目
 
-## 关于后续
 
-计划将上述内容分为 6 个分项目，以便阶段性学习和复习，以及增添其他爬虫资源的内容
-
-#### 1、Crawler_base
-
-HTTP、网页基础、爬虫基本原理、代理基本原理、多线程等爬虫基础理论
-
-urllib、requests、re、httpx 等请求库，XPath、Beautiful Soup、pyquery、parsel 等解析库，文件存储、MySQL、MongoDB、Redis、Elasticsearch、RabbitMQ 等存储库的基本使用
-
-#### 2、Crawler_apply
-
-Ajax 数据爬取，基于 Session 和 Cookie 的模拟登录、基于 JWT 的模拟登录，页面智能解析，异步爬虫，使用代理等等爬虫应用内容
-
-#### 3、Crawler_javascript
-
-使用 Selenium、Splash、Pyppeteer、Playwright 针对 JavaScript 动态渲染页面进行爬取
-
-#### 4、Crawler_scrapy
-
-Scrapy 框架等
-
-#### 5、Crawler_app
-
-App 数据爬取、Android 逆向
-
-#### 6、Crawler_advance
-
-爬虫进阶内容
-
-运用 OCR、深度学习等知识识别验证码，JavaScript 逆向等

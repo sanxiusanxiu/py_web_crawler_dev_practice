@@ -75,16 +75,17 @@ def parse_detail(html):
         'score': score
     }
 
-# 指定数据保存路径，如果不存在则创建
-results_dir = 'case_results'
-exists(results_dir) or makedirs(results_dir)
+# 20261002 调整目录结构
+# # 指定数据保存路径，如果不存在则创建
+# results_dir = 'case_results'
+# exists(results_dir) or makedirs(results_dir)
 
 def save_data(data):
     # 获取数据中的 电影名称，将其作为文件名
     # name = data.get('name')
     # 20250114 不再分开存放，会导致部分电影数据缺失
     name = 'movies'
-    data_path = f'{results_dir}/{name}.json'
+    data_path = f'{name}.json'
     json.dump(data, open(data_path, 'a', encoding='utf-8'), ensure_ascii=False, indent=4)
 
 # 可使用多进程加速爬取，见下

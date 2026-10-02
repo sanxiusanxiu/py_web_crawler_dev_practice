@@ -137,3 +137,5 @@ def bs4_correlation_node3():
     print(type(soup.a.parents))
     print(list(soup.a.parents)[0])
     print(list(soup.a.parents)[0].attrs['class'])
+
+bs4_correlation_node()

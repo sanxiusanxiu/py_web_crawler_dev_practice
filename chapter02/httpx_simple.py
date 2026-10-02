@@ -46,4 +46,4 @@ def httpx_client_paras():
 # httpx_simple()
 # httpx_get()
 # httpx_client()
-# httpx_client_paras()
+httpx_client_paras()
